@@ -12,6 +12,7 @@
 
         return {
             'total' : t,
+             //'days' : days,
             'hours' : hours,
             'minutes' : minutes,
             'seconds' : seconds
@@ -21,6 +22,7 @@
     //Заполняем таймер на странице
     function setClock(id, endtime) {
         let timer = document.getElementById(id),
+            //days = timer.querySelector('.days'),
             hours = timer.querySelector('.hours'),
             minutes = timer.querySelector('.minutes'),
             seconds = timer.querySelector('.seconds'),
@@ -29,12 +31,14 @@
         //Условия останова таймера
         function updateClock() {
             let t = getTimeRemaining(endtime);
+            //days.textContent = t.days;
             hours.textContent = t.hours;
             minutes.textContent = t.minutes;
             seconds.textContent = t.seconds;
 
             if(t.total <= 0) {
-                clearInterval(timeInterval); 
+                clearInterval(timeInterval);
+                //days.textContent = addZero(0);
                 hours.textContent = addZero(0);
                 minutes.textContent = addZero(0);
                 seconds.textContent = addZero(0);  
