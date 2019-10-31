@@ -1,10 +1,10 @@
 //Timer
     
-    let deadline = '2018-10-18';
+    const deadline = '2018-10-18';
     
     //Получаем разницу во времени между конечной датой и настоящим временем
     function getTimeRemaining(endtime) {
-        let t = Date.parse(endtime) - Date.parse(new Date()),
+        const t = Date.parse(endtime) - Date.parse(new Date()),
             seconds = addZero(Math.floor((t/1000) % 60)),
             minutes = addZero(Math.floor((t/1000/ 60) % 60)),
             hours = addZero(Math.floor((t/(1000*60*60))));
@@ -21,7 +21,7 @@
     
     //Заполняем таймер на странице
     function setClock(id, endtime) {
-        let timer = document.getElementById(id),
+        const timer = document.getElementById(id),
             //days = timer.querySelector('.days'),
             hours = timer.querySelector('.hours'),
             minutes = timer.querySelector('.minutes'),
@@ -30,7 +30,7 @@
             
         //Условия останова таймера
         function updateClock() {
-            let t = getTimeRemaining(endtime);
+            const t = getTimeRemaining(endtime);
             //days.textContent = t.days;
             hours.textContent = t.hours;
             minutes.textContent = t.minutes;
